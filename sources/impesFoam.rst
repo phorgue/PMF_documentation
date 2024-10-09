@@ -1,6 +1,6 @@
 .. _impesFoam:
 
-impesFoam Solver
+impesFoam solver
 ================
 
 Description
