@@ -1,6 +1,6 @@
 .. _anisoImpesFoam:
 
-anisoImpesFoam Solver
+anisoImpesFoam solver
 =====================
 
 Description
@@ -12,19 +12,7 @@ The **anisoImpesFoam** solver is designed for simulating flow through an anisotr
 
 .. math:: \epsilon \frac{\partial S_b}{\partial t} + \nabla \cdot \mathbf{U_b} = q_b
 
-.. Where:
-
-.. - :math:`k_{ri}(S_b)` is the relative permeability of phase :math:`i`, which varies between 0 and 1 depending on the local saturation of the wetting phase :math:`S_b`.
-.. - :math:`\mu_i` is the dynamic viscosity of phase :math:`i`.
-.. - :math:`\rho_i` is the density of phase :math:`i`.
-.. - :math:`\mathbf{g}` is the gravity vector (:math:`\mathbf{g} = -9.81 \vec{e_y}`).
-.. - :math:`p_c(S_b)` is the macro-scale capillary pressure, which depends on the saturation :math:`S_b`.
-.. - :math:`p_a` is the pressure of phase :math:`a`.
-.. - :math:`q_i` is a source term (typically used for injection or extraction wells).
-.. - :math:`\epsilon` is the porosity of the domain.
-.. - :math:`\mathbf{U_b}` is the velocity field of phase :math:`b`.
-
-Where :math:`k_{ri}(S_b)` is the relative permeability of the phase :math:`i`, whose value between :math:`0` and :math:`1` depends on the local saturation of the wetting phase :math:`S_b`, :math:`\mu_i` is the dynamic viscosity, :math:`\rho_i` is the density, :math:`\mathbf{g}` is the gravity field :math:`\left(\mathbf{g} = -9,81 \vec{e_y}\right)`, :math:`p_c(S_b)` is the macro-scale capillary pressure depending on the saturation :math:`S_b`, :math:`p_a` is the pressure of the phase :math:`a`, :math:`q_i` is a source term (used for injection or extraction wells), :math:`\epsilon` is the domain porosity, :math:`\mathbf{U_b}` is the velocity field of the phase :math:`b`.
+Where :math:`k_{ri}(S_b)` is the relative permeability of the phase :math:`i`, whose value between :math:`0` and :math:`1` depends on the local saturation of the wetting phase :math:`S_b`, :math:`\mu_i` is the dynamic viscosity, :math:`\rho_i` is the density, :math:`\mathbf{g}` is the gravity field :math:`\left(\mathbf{g} = -9,81 \vec{e_y}\right)`, :math:`p_c(S_b)` is the macro-scale capillary pressure depending on the saturation :math:`S_b`, :math:`p_a` is the pressure of the phase :math:`a`, :math:`q_i` is a source term (used for injection or extraction wells), :math:`\epsilon` is the domain porosity, and :math:`\mathbf{U_b}` is the velocity field of the phase :math:`b`.
 
 Note that the **anisoImpesFoam** solver can also be used for isotropic cases, although this will result in higher memory and computation costs due to the added complexity.
 
@@ -156,3 +144,4 @@ Required Fields
 - **constant/g**: gravity field
 
 - **constant/K.org**: permeability field
+
