@@ -1,6 +1,6 @@
 .. _groundwaterTransportFoam-tutorials:
 
-groundwaterTransportFoam-tutorials
+groundwaterTransportFoam tutorials
 ==================================
 
 The examples provided in the directory ``tutorials/groundwaterTransportFoam-tutorials/`` illustrate the usage of the **groundwaterTransportFoam** solver.

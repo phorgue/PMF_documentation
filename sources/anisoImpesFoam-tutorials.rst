@@ -1,6 +1,6 @@
 .. _anisoImpesFoam-tutorials:
 
-anisoImpesFoam-tutorials
+anisoImpesFoam tutorials
 ========================
 
 Exploitation Cases

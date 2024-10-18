@@ -1,6 +1,6 @@
 .. _porousScalarTransport2DFoam-tutorials:
 
-porousScalarTransport2DFoam-tutorials
+porousScalarTransport2DFoam tutorials
 =====================================
 
 The examples provided in the directory ``tutorials/porousScalarTransport2DFoam-tutorials/`` illustrate the usage of the **porousScalarTransport2DFoam** solver.

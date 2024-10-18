@@ -1,6 +1,6 @@
 .. _impesFoam-tutorials:
 
-impesFoam-tutorials
+impesFoam tutorials
 ===================
 
 The examples provided in the directory ``tutorials/impesFoam-tutorials/`` illustrate the usage of the **impesFoam** solver.
