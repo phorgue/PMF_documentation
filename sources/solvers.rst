@@ -18,7 +18,7 @@ Solvers
 .. _2D-solver-introduction-solvers:
 
 2D Solvers for Groundwater Modeling
-===================================
+-----------------------------------
 
 The 2D solvers provided in this toolbox are designed for efficient modeling of groundwater flows in porous media. These solvers leverage the Dupuit-Forchheimer approximation, which simplifies the problem by reducing it to two dimensions, assuming the vertical velocity component is negligible.
 
