@@ -1,6 +1,6 @@
 .. _groundwater2D-tutorials:
 
-groundwater2D-tutorials
+groundwater2D tutorials
 ===============================
 
 The 2D groundwater solvers are designed to simulate steady and transient groundwater flows in porous media. These solvers use the Dupuit-Forchheimer approximation to simplify the modeling of flow by neglecting the vertical velocity component, which reduces the problem to two dimensions. This is ideal for large-scale simulations of aquifers or watersheds.

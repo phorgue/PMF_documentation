@@ -1,6 +1,6 @@
 .. _groundwaterFoam-tutorials:
 
-groundwaterFoam-tutorials
+groundwaterFoam tutorials
 =========================
 
 The examples provided in the directory ``tutorials/groundwaterFoam-tutorials/`` illustrate the usage of the **groundwaterFoam** solver.

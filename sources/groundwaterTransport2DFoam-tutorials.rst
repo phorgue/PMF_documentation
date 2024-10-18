@@ -1,6 +1,6 @@
 .. _groundwaterTransport2DFoam-tutorials:
 
-groundwaterTransport2DFoam-tutorials
+groundwaterTransport2DFoam tutorials
 ====================================
 
 The examples provided in the directory ``tutorials/groundwaterTransport2DFoam-tutorials/`` illustrate the usage of the **groundwaterTransport2DFoam** solver.

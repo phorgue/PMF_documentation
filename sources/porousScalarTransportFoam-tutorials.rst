@@ -1,6 +1,6 @@
 .. _porousScalarTransportFoam-tutorials:
 
-porousScalarTransportFoam-tutorials
+porousScalarTransportFoam tutorials
 ===================================
 
 The examples provided in the directory ``tutorials/porousScalarTransportFoam-tutorials/`` demonstrate the use of the **porousScalarTransportFoam** solver.
