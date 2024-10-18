@@ -1,24 +1,23 @@
 .. _solvers:
 
-Solvers
-=======
+Tutorials
+=========
 
 .. toctree::
    :maxdepth: 1
 
-   anisoImpesFoam
-   groundwater2DFoam
-   groundwaterFoam
-   groundwaterTransport2DFoam
-   groundwaterTransportFoam
-   impesFoam
-   porousScalarTransport2DFoam
-   porousScalarTransportFoam
+   anisoImpesFoam-tutorials
+   groundwater2DFoam-tutorials
+   groundwaterFoam-tutorials
+   groundwaterTransport2DFoam-tutorials
+   groundwaterTransportFoam-tutorials
+   impesFoam-tutorials
+   porousScalarTransport2DFoam-tutorials
+   porousScalarTransportFoam-tutorials
    
-.. _2D-solver-introduction-solvers:
+.. _2D-solver-introduction-tutorials:
 
-2D Solvers for Groundwater Modeling
-===================================
+**2D Solvers for Groundwater Modeling**
 
 The 2D solvers provided in this toolbox are designed for efficient modeling of groundwater flows in porous media. These solvers leverage the Dupuit-Forchheimer approximation, which simplifies the problem by reducing it to two dimensions, assuming the vertical velocity component is negligible.
 
@@ -59,4 +58,6 @@ Here a quick view of the watershed for every 2D validation cases:
      - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/2D_watershed_modeling/DEM_for_upper_limit.png
         :width: 500px
         :alt: DEM_for_upper_limit
+        
+With: (a) Mesh - (b) Permeability field - (c) DEM for upper limit - (d) DEM for lower limit
 
