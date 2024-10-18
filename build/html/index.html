@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>porousMultiphaseFoam Documentation &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">porousMultiphaseFoam Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="porousmultiphasefoam-documentation">
+<span id="index"></span><h1>porousMultiphaseFoam Documentation<a class="headerlink" href="#porousmultiphasefoam-documentation" title="Permalink to this heading"></a></h1>
+<p>Welcome to the porousMultiphaseFoam <strong>PMFv2406</strong> documentation.</p>
+<p><strong>PMF</strong> is an open-source toolbox dedicated to simulation of flow and transport
+processes in porous media. It is based on the OpenFOAM environment and therefore
+benefits from its multiple feature such as pre- and post-processing tools or
+parallel efficiency for example.</p>
+<p>Initially developed for the modeling of two-phase flow in porous media (using
+the IMPES method), PMF was then extended to the hydrology, with two
+complementary approaches: a 3D unsaturated code solving the Richards’ equation
+and a low-cost 2D saturated code (using Dupuit’s assumption)..</p>
+<p>A multi-specie transport module, coupled or decoupled, has been developed and
+can be used either with unsaturated or saturated solvers.</p>
+<p>Multiple features have been added to help set up of realistic models :</p>
+<ul class="simple">
+<li><p>event file structures to handle time-varying source points or boundary
+conditions</p></li>
+<li><p>DEM/XY file structures to use topological data</p></li>
+<li><p>numerical methods for time-stepping and non-linear solvers.</p></li>
+</ul>
+<p>Validation and development details can be found in this document or in the
+<a class="reference internal" href="publications.html#publications"><span class="std std-ref">Publications</span></a></p>
+</section>
+<section id="content">
+<h1>Content<a class="headerlink" href="#content" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#how-to-install">How to install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#compatibility">Compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam.html">anisoImpesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam.html">groundwater2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam.html">groundwaterFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam.html">groundwaterTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam.html">groundwaterTransportFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam.html">impesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam.html">porousScalarTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam.html">porousScalarTransportFoam solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam-tutorials.html">anisoImpesFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam-tutorials.html">groundwater2D-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam-tutorials.html">groundwaterFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam-tutorials.html">groundwaterTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam-tutorials.html">groundwaterTransportFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam-tutorials.html">impesFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam-tutorials.html">porousScalarTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam-tutorials.html">porousScalarTransportFoam-tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="darcyFoam.html">darcyFoam utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setBoundaryWaterLevel.html">setBoundaryWaterLevel utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setFieldsFromDEM.html">setFieldsFromDEM utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setFieldsFromXY.html">setFieldsFromXY utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subsetMeshFromDEM.html">subsetMeshFromDEM utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="numericalMethods.html">numericalMethods library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousBoundaryConditions.html">porousBoundaryConditions library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousModels.html">porousModels library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolsGIS.html">toolsGIS library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="publications.html#development">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publications.html#publications-using-pmf">Publications using PMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publications.html#publications-using-derived-not-open-source-versions">Publications using derived not open-source versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publications.html#not-peer-reviewed-documents">Not peer-reviewed documents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

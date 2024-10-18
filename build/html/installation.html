@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solvers" href="solvers.html" />
+    <link rel="prev" title="porousMultiphaseFoam Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install">How to install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility">Compatibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#development-branches">Development branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updated-branches-pmfv2406-0">Updated branches: PMFv2406.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#old-branches-not-updated">Old branches not updated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version-not-supported">Version not supported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<section id="how-to-install">
+<h2>How to install<a class="headerlink" href="#how-to-install" title="Permalink to this heading"></a></h2>
+<p>You need first a working OpenFOAM installation on you computer.</p>
+<p>Then, load the OpenFOAM environment, i.e. for example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">OpenFOAM</span><span class="o">-</span><span class="n">v2206</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>Then in the “porousMultiphaseFoam” directory, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">Allwmake</span> <span class="o">-</span><span class="n">j</span>
+</pre></div>
+</div>
+<p>to install the package (<strong>-j</strong> allow the parallel compilation).</p>
+<p>The PMF dynamic libraries are compiled and stored in the standard OpenFOAM user directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$FOAM_USER_LIBBIN
+</pre></div>
+</div>
+<p>while the executable solvers are placed in the standard OpenFOAM user directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$FOAM_USER_APPBIN.
+</pre></div>
+</div>
+<ul>
+<li><p>Each tutorial directory contains “run” and “clean” files to test installation
+and validate the solver.</p></li>
+<li><p>A python script runTutorials.py can be used to test all components.</p></li>
+<li><p>To remove compilation and temporary files, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">Allwclean</span> <span class="o">--</span><span class="n">purge</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>–purge</strong> is optional and force the deletion of the executables and libraries.</p>
+<ul class="simple">
+<li><p>see the ReleaseNotes.txt file for detailed information about the toolbox.</p></li>
+</ul>
+</section>
+<section id="compatibility">
+<span id="id2"></span><h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this heading"></a></h2>
+<p>Depending on your installation, you should switch to the github branch corresponding to your OpenFOAM version. If you use OpenFOAM-v2206 for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">openfoam</span><span class="o">-</span><span class="n">v2206</span>
+</pre></div>
+</div>
+<p>Note that if you want to use the latest version of PMF, it is necessary to have a sufficiently recent installation of openfoam.</p>
+<p><em>OpenFOAM-v11</em> and <em>OpenFOAM-v12</em> are not supported currently, use OpenFOAM.com versions.</p>
+<section id="development-branches">
+<h3>Development branches<a class="headerlink" href="#development-branches" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>branch <strong>dev</strong> works with OpenFOAM-v2406 <a class="reference external" href="https://www.openfoam.com/">openfoam.com</a></p></li>
+</ul>
+</section>
+<section id="updated-branches-pmfv2406-0">
+<h3>Updated branches: PMFv2406.0<a class="headerlink" href="#updated-branches-pmfv2406-0" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>branch <strong>openfoam-v2406</strong></p></li>
+<li><p>branch <strong>openfoam-v2306</strong></p></li>
+<li><p>branch <strong>openfoam-v2206</strong></p></li>
+<li><p>branch <strong>openfoam-v2106</strong></p></li>
+</ul>
+<p><em>openfoam-v10 has errors when using postProcess/setSet in tutorials</em></p>
+<p><em>Note that intermediate version (i.e. v1912, v2012v, v2112…) are not tested.</em></p>
+</section>
+<section id="old-branches-not-updated">
+<h3>Old branches not updated<a class="headerlink" href="#old-branches-not-updated" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>branch <strong>openfoam-v2006</strong>  &gt; PMFv2107.2</p></li>
+<li><p>branch <strong>openfoam-v1906</strong>  &gt; PMFv2107.1</p></li>
+<li><p>branch <strong>openfoam-v1812</strong>  &gt; PMFv1906</p></li>
+<li><p>branch <strong>openfoam-v1806</strong>  &gt; PMFv1809</p></li>
+<li><p>branch <strong>openfoam-v1712</strong>  &gt; PMFv1805</p></li>
+<li><p>branch <strong>openfoam-v10</strong>    &gt; PMFv2310</p></li>
+<li><p>branch <strong>openfoam-v9</strong>     &gt; PMFv2107.2</p></li>
+<li><p>branch <strong>openfoam-v8</strong>     &gt; PMFv2107.2</p></li>
+<li><p>branch <strong>openfoam-v7</strong>     &gt; PMFv2107</p></li>
+<li><p>branch <strong>openfoam-v6</strong>     &gt; PMFv1906</p></li>
+<li><p>branch <strong>openfoam-v5</strong>     &gt; PMFv1809</p></li>
+<li><p>branch <strong>foam-extend-4.0</strong> &gt; PMFv1809</p></li>
+</ul>
+</section>
+<section id="version-not-supported">
+<h3>Version not supported<a class="headerlink" href="#version-not-supported" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>OpenFOAM 4.0 and older</p></li>
+<li><p>foam-extend 3.2 and older</p></li>
+<li><p>OpenFOAM v1706 and older</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="porousMultiphaseFoam Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="solvers.html" class="btn btn-neutral float-right" title="Solvers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

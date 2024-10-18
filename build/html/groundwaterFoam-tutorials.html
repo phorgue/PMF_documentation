@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>groundwaterFoam-tutorials &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="groundwaterTransport2DFoam-tutorials" href="groundwaterTransport2DFoam-tutorials.html" />
+    <link rel="prev" title="groundwater2DFoam-tutorials" href="groundwater2DFoam-tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam-tutorials.html">anisoImpesFoam Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam-tutorials.html">groundwater2DFoam-tutorials</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">groundwaterFoam-tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#validation-case-1-steady-flow">Validation Case 1: Steady Flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation-case-2-transient-flow">Validation Case 2: Transient Flow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam-tutorials.html">groundwaterTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam-tutorials.html">groundwaterTransportFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam-tutorials.html">impesFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam-tutorials.html">porousScalarTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam-tutorials.html">porousScalarTransportFoam-tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">groundwaterFoam-tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/groundwaterFoam-tutorials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="groundwaterfoam-tutorials">
+<span id="id1"></span><h1>groundwaterFoam-tutorials<a class="headerlink" href="#groundwaterfoam-tutorials" title="Permalink to this heading"></a></h1>
+<p>The examples provided in the directory <code class="docutils literal notranslate"><span class="pre">tutorials/groundwaterFoam-tutorials/</span></code> illustrate the usage of the <strong>groundwaterFoam</strong> solver.</p>
+<section id="validation-case-1-steady-flow">
+<h2>Validation Case 1: Steady Flow<a class="headerlink" href="#validation-case-1-steady-flow" title="Permalink to this heading"></a></h2>
+<p>The steady flow case tests the performance of the solver in a vertical 1D column with a height of <span class="math notranslate nohighlight">\(H = 34.5 \, \text{m}\)</span> and discretized into 5009 cells. The simulation is driven by a constant infiltration velocity of <span class="math notranslate nohighlight">\(V_{\text{top}} = 4.753 \times 10^{-9} \, \text{m/s}\)</span> at the top boundary, while the bottom boundary represents the saturated zone with a Dirichlet condition set to <span class="math notranslate nohighlight">\(H_{\text{bottom}} = 0 \, \text{m}\)</span>.</p>
+<p>This case employs the <strong>Van Genuchten</strong> model for water retention, with the following parameters:</p>
+<ul class="simple">
+<li><p>Porosity: <span class="math notranslate nohighlight">\(\epsilon = 0.27\)</span></p></li>
+<li><p>Permeability: <span class="math notranslate nohighlight">\(K = 7 \times 10^{-12} \, \text{m}^2\)</span></p></li>
+<li><p>Specific storage: <span class="math notranslate nohighlight">\(S_s = 0.001\)</span></p></li>
+<li><p>Van Genuchten parameters: <span class="math notranslate nohighlight">\(\alpha = 13 \, \text{m}^{-1}\)</span>, <span class="math notranslate nohighlight">\(m = 0.3007\)</span></p></li>
+</ul>
+<p>The system reaches steady-state after continuous infiltration. Numerical results from the <strong>groundwaterFoam</strong> solver are compared against the reference solution obtained from the <strong>METIS</strong> code (we take the METIS code solution as our reference solution because of its strong credibility and longevity). The comparison of the saturation distribution along the column shows excellent agreement, with only minor discrepancies near the bottom due to strong pressure head gradients.</p>
+<p>Parameters:</p>
+<ul class="simple">
+<li><p><strong>Flow properties</strong></p></li>
+</ul>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Symbol</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Viscosity</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 \times 10^{-3}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{Pa.s}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Density</p></td>
+<td><p><span class="math notranslate nohighlight">\(\rho\)</span></p></td>
+<td><p>100</p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{kg/m}^3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Van Genuchten coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p>0.3007</p></td>
+<td><p>[-]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Van Genuchten coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+<td><p>13.0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}^{-1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Permeability</p></td>
+<td><p><span class="math notranslate nohighlight">\(K\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(7 \times 10^{-12}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}^2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Kinematic porosity</p></td>
+<td><p><span class="math notranslate nohighlight">\(\epsilon\)</span></p></td>
+<td><p>0.27</p></td>
+<td><p>[-]</p></td>
+</tr>
+<tr class="row-even"><td><p>Specific storage</p></td>
+<td><p><span class="math notranslate nohighlight">\(S_s\)</span></p></td>
+<td><p>0.001</p></td>
+<td><p>[-]</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Transport properties</strong></p></li>
+</ul>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Property</strong></p></th>
+<th class="head"><p><strong>Symbol</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Total porosity</p></td>
+<td><p><span class="math notranslate nohighlight">\(\epsilon_{\text{total}}\)</span></p></td>
+<td><p>0.30</p></td>
+<td><p>[-]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tortuosity</p></td>
+<td><p><span class="math notranslate nohighlight">\(\tau\)</span></p></td>
+<td><p>1</p></td>
+<td><p>[-]</p></td>
+</tr>
+<tr class="row-even"><td><p>Molecular diffusivity</p></td>
+<td><p><span class="math notranslate nohighlight">\(D_m\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 \times 10^{-9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}^2/\text{s}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dispersivity coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha_L\)</span></p></td>
+<td><p>1.0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>–</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha_T\)</span></p></td>
+<td><p>0.2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Volume partitioning coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(K_d\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5 \times 10^{-5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{m}^3/\text{kg}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Radioactive decay coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(\lambda\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1 \times 10^{-9}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\text{s}^{-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Visual results for the steady-state saturation profile:</p>
+<ul class="simple">
+<li><p><strong>Saturation profile for the steady flow case:</strong></p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/steady/steady.png"><img alt="Steady Flow Saturation Profile" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/steady/steady.png" style="width: 500px;" /></a>
+</figure>
+</section>
+<section id="validation-case-2-transient-flow">
+<h2>Validation Case 2: Transient Flow<a class="headerlink" href="#validation-case-2-transient-flow" title="Permalink to this heading"></a></h2>
+<p>The transient flow case starts from the steady-state solution obtained in the previous case. The infiltration velocity at the top boundary is varied over time using a piecewise linear function ranging from 0 to 1000 times the reference velocity (<span class="math notranslate nohighlight">\(V_{\text{top}} = 4.753 \times 10^{-9} \, \text{m/s}\)</span>) over a period of 2315 days (∼2.108 seconds).</p>
+<p>This test aims to assess the solver’s robustness under large variations in infiltration, particularly in the unsaturated zone. The results are presented in terms of the water flow rate at the bottom boundary, where a comparison is made between the results from <strong>groundwaterFoam</strong> and <strong>METIS</strong>. The two models show good agreement, with minor differences observed during the drainage phase due to discretization methods.</p>
+<p>Parameters:</p>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Infiltration velocity <span class="math notranslate nohighlight">\(V_{\text{top}}\)</span></p></td>
+<td><p>Variable (0 to 1000 times the reference velocity)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Time duration</p></td>
+<td><p>2315 days</p></td>
+</tr>
+<tr class="row-even"><td><p>Porosity <span class="math notranslate nohighlight">\(\epsilon\)</span></p></td>
+<td><p>0.27</p></td>
+</tr>
+<tr class="row-odd"><td><p>Permeability <span class="math notranslate nohighlight">\(K\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(7 \times 10^{-12} \, \text{m}^2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The comparison of water flow rates:</p>
+<ul class="simple">
+<li><p><strong>Water flow rate comparison for the transient flow case:</strong></p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/transient/transient.png"><img alt="Transient Flow Rate" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/transient/transient.png" style="width: 500px;" /></a>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="groundwater2DFoam-tutorials.html" class="btn btn-neutral float-left" title="groundwater2DFoam-tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="groundwaterTransport2DFoam-tutorials.html" class="btn btn-neutral float-right" title="groundwaterTransport2DFoam-tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

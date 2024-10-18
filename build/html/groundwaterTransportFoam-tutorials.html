@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>groundwaterTransportFoam-tutorials &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="impesFoam-tutorials" href="impesFoam-tutorials.html" />
+    <link rel="prev" title="groundwaterTransport2DFoam-tutorials" href="groundwaterTransport2DFoam-tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam-tutorials.html">anisoImpesFoam Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam-tutorials.html">Groundwater2D Solvers Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam-tutorials.html">groundwaterFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam-tutorials.html">groundwaterTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">groundwaterTransportFoam-tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#validation-case-water-injection-with-an-imposed-solute-concentration">Validation Case: Water Injection with an Imposed Solute Concentration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam-tutorials.html">impesFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam-tutorials.html">porousScalarTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam-tutorials.html">porousScalarTransportFoam-tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html#d-solvers-for-groundwater-modeling">2D Solvers for Groundwater Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">groundwaterTransportFoam-tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/groundwaterTransportFoam-tutorials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="groundwatertransportfoam-tutorials">
+<span id="id1"></span><h1>groundwaterTransportFoam-tutorials<a class="headerlink" href="#groundwatertransportfoam-tutorials" title="Permalink to this heading"></a></h1>
+<p>The examples provided in the directory <code class="docutils literal notranslate"><span class="pre">tutorials/groundwaterTransportFoam-tutorials/</span></code> illustrate the usage of the <strong>groundwaterTransportFoam</strong> solver.</p>
+<section id="validation-case-water-injection-with-an-imposed-solute-concentration">
+<h2>Validation Case: Water Injection with an Imposed Solute Concentration<a class="headerlink" href="#validation-case-water-injection-with-an-imposed-solute-concentration" title="Permalink to this heading"></a></h2>
+<p>This case begins with a steady-state configuration (for further details, refer to the <a class="reference external" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/build/html/groundwaterFoam-tutorials.html">Steady Validation Case - groundwaterFoam</a>). Water is injected into the column (at <span class="math notranslate nohighlight">\(z=24 \text{ m}\)</span>) with a fixed flow rate of <span class="math notranslate nohighlight">\(Q_{in}=3.82 \times 10^{-5} \text{ kg}. \text{m}^{-3}\)</span> and an imposed solute concentration of <span class="math notranslate nohighlight">\(C_{in} = 6.12 \times 10^{-11} \text{ kg}. \text{m}^{-3}\)</span> from <span class="math notranslate nohighlight">\(t_{start} = 0\)</span> to <span class="math notranslate nohighlight">\(t_{stop}=91\)</span> days. After injection stops, the simulation continues until <span class="math notranslate nohighlight">\(t_{end} = 730\)</span> days.</p>
+<p>This setup is critical for testing the solver’s robustness as it involves:</p>
+<ul class="simple">
+<li><p>A sudden change in local water content</p></li>
+<li><p>The movement of a water front near saturation <span class="math notranslate nohighlight">\(\displaystyle \left(h \approx -3.3 \times 10^{-3} \text{ and } \frac{\theta}{\theta_{max}} \approx 0.997\right)\)</span>, followed by a quasi-steady state</p></li>
+<li><p>A sharp transition upon the end of injection</p></li>
+<li><p>Capillary drainage over an extended period</p></li>
+</ul>
+<p>The water and solute fluxes leaving the column are shown in the following images:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/solute_flux.png"><img alt="solute flux" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/solute_flux.png" style="width: 500px;" /></a>
+</figure>
+</td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/water_flux.png"><img alt="water flux" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/water_flux.png" style="width: 500px;" /></a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This case also highlights the effectiveness of time-step management based on truncation error. The figure below shows how the adaptive time-stepping method adjusts dynamically to changes in the physical system, optimizing step sizes to maintain accuracy while minimizing computational cost.</p>
+<p>At the beginning of the simulation, during rapid water injection, small time steps (on the order of seconds) are employed to capture fast changes in water saturation near the injection point. As the water front propagates through the column, larger time steps are used when a quasi-steady state is reached. Once the injection stops at 91 days, the solver briefly reduces the step size to handle the abrupt change before resuming larger steps during the slow capillary drainage phase.</p>
+<p>The figure below depicts the time-step evolution over the simulation’s duration:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/timeStep_evolution.png"><img alt="time step evolution" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/timeStep_evolution.png" style="width: 500px;" /></a>
+</figure>
+<p>In addition to demonstrating the robustness of the <strong>groundwaterTransportFoam</strong> solver, this case underscores the challenges of using Picard’s method in strongly nonlinear problems like this one. The Van Genuchten model, which is applied here for capillary functions, introduces significant nonlinearity, especially near saturation. While Picard’s method can converge slowly in such conditions, employing Newton’s method leads to quadratic convergence, reducing computation time from hours to minutes during method transitions.</p>
+<p>This combined approach, leveraging the broad convergence range of Picard’s algorithm and the speed of Newton’s method, allows for efficient simulation even in challenging scenarios involving high flow rates in the vadose zone and complex capillary behavior.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="groundwaterTransport2DFoam-tutorials.html" class="btn btn-neutral float-left" title="groundwaterTransport2DFoam-tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="impesFoam-tutorials.html" class="btn btn-neutral float-right" title="impesFoam-tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

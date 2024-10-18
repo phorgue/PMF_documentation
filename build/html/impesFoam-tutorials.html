@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>impesFoam-tutorials &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="porousScalarTransport2DFoam-tutorials" href="porousScalarTransport2DFoam-tutorials.html" />
+    <link rel="prev" title="groundwaterTransportFoam-tutorials" href="groundwaterTransportFoam-tutorials.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam-tutorials.html">anisoImpesFoam Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam-tutorials.html">groundwater2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam-tutorials.html">groundwaterFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam-tutorials.html">groundwaterTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam-tutorials.html">groundwaterTransportFoam-tutorials</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">impesFoam-tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#validation-case-1-buckley-leverett">Validation Case 1: Buckley-Leverett</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation-case-2-capillary-gravity-equilibrium">Validation Case 2: Capillary-Gravity Equilibrium</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam-tutorials.html">porousScalarTransport2DFoam-tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam-tutorials.html">porousScalarTransportFoam-tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">impesFoam-tutorials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/impesFoam-tutorials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="impesfoam-tutorials">
+<span id="id1"></span><h1>impesFoam-tutorials<a class="headerlink" href="#impesfoam-tutorials" title="Permalink to this heading"></a></h1>
+<p>The examples provided in the directory <code class="docutils literal notranslate"><span class="pre">tutorials/impesFoam-tutorials/</span></code> illustrate the usage of the <strong>impesFoam</strong> solver.</p>
+<section id="validation-case-1-buckley-leverett">
+<h2>Validation Case 1: Buckley-Leverett<a class="headerlink" href="#validation-case-1-buckley-leverett" title="Permalink to this heading"></a></h2>
+<p>The Buckley-Leverett case simulates two-phase flow in a 1D domain with a length of <span class="math notranslate nohighlight">\(L = 1 \, \text{m}\)</span>, porosity <span class="math notranslate nohighlight">\(\epsilon = 0.5\)</span>, and intrinsic permeability <span class="math notranslate nohighlight">\(K = 1 \times 10^{-11} \, \text{m}^2\)</span> using 400 computational cells. In this case, capillary effects are excluded, and a semi-analytical solution is available to compute the shock saturation, front velocity, and saturation profile behind the front.</p>
+<p>In this example, the fluids involved are air, water, and oil. Initially, the domain is fully saturated with the non-wetting fluid (air or oil), and water is injected at a velocity of <span class="math notranslate nohighlight">\(U_b = 1 \times 10^{-5} \, \text{m} \, \text{s}^{-1}\)</span>. For the water-air system, the Brooks and Corey model is applied, and the Van Genuchten model is used for the water-oil system.</p>
+<p>In the gravity-driven scenario, with vertical water injection, the front saturation is computed as follows:</p>
+<div class="math notranslate nohighlight">
+\[U_b - \frac{K k_{rb}(S_{b,\text{front}})}{\mu_b} \rho_b g = 0\]</div>
+<p>The resulting front saturations are <span class="math notranslate nohighlight">\(S_{b,\text{front}} = 0.467\)</span> for the Brooks and Corey model and <span class="math notranslate nohighlight">\(S_{b,\text{front}} = 0.754\)</span> for the Van Genuchten model. The corresponding front velocities are <span class="math notranslate nohighlight">\(4.28 \times 10^{-5} \, \text{m} \, \text{s}^{-1}\)</span> and <span class="math notranslate nohighlight">\(2.65 \times 10^{-5} \, \text{m} \, \text{s}^{-1}\)</span> respectively.</p>
+<p>In this validation, the key parameters are:</p>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p><strong>Fluid</strong></p></td>
+<td><p><strong>Density</strong> <span class="math notranslate nohighlight">\(\rho \, (\text{kg/m}^3)\)</span></p></td>
+<td><p><strong>Viscosity</strong> <span class="math notranslate nohighlight">\(\mu \, (\text{Pa s})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Air</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(1.76 \times 10^{-5}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Water</p></td>
+<td><p>1000</p></td>
+<td><p><span class="math notranslate nohighlight">\(1 \times 10^{-3}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Oil</p></td>
+<td><p>800</p></td>
+<td><p><span class="math notranslate nohighlight">\(1 \times 10^{-1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Model</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Brooks and Corey</p></td>
+<td><p>3</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Van Genuchten</p></td>
+<td><p>0.5</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Variable</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_a\)</span> tolerance</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-12}\)</span></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(CFL\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.75\)</span></p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta S_{b,max}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.01\)</span></p></td>
+<td><p>–</p></td>
+</tr>
+</tbody>
+</table>
+<p>Here are visual comparisons for both cases, showing excellent agreement between numerical and analytical results:</p>
+<ul class="simple">
+<li><p><strong>Brooks and Corey model:</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_gravity.png"><img alt="Buckley-Leverett Brooks and Corey gravity case" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_gravity.png" style="width: 500px;" /></a>
+</figure>
+</td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_noGravity.png"><img alt="Buckley-Leverett Brooks and Corey no gravity case" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_noGravity.png" style="width: 500px;" /></a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Van Genuchten model:</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_gravity.png"><img alt="Buckley-Leverett Van Genuchten gravity case" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_gravity.png" style="width: 500px;" /></a>
+</figure>
+</td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_noGravity.png"><img alt="Buckley-Leverett Van Genuchten no gravity case" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_noGravity.png" style="width: 500px;" /></a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="validation-case-2-capillary-gravity-equilibrium">
+<h2>Validation Case 2: Capillary-Gravity Equilibrium<a class="headerlink" href="#validation-case-2-capillary-gravity-equilibrium" title="Permalink to this heading"></a></h2>
+<p>This validation case explores the two-phase flow (air and water) in a vertical 1D domain of height <span class="math notranslate nohighlight">\(H = 1 \, \text{m}\)</span> under the influence of capillary pressure. Initially, the domain is filled with the non-wetting phase (air) above the wetting phase (water). The case aims to investigate how capillary forces impact saturation distribution over time.</p>
+<p>The domain is initialized with a saturation of <span class="math notranslate nohighlight">\(S_b = 0.5\)</span> for water in the lower half. Capillary pressure effects are considered, enabling us to observe the balance between gravitational and capillary forces as the system approaches equilibrium.</p>
+<p>The governing equation for saturation is derived from mass conservation, given by:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \frac{\partial S_b}{\partial y} = \frac{(\rho_b - \rho_a) g_y}{\frac{\partial p_c}{\partial S_b}(S_b)}\]</div>
+<p>This equation describes how the saturation gradient depends on the density difference between the phases and the capillary pressure gradient, resulting in a saturation profile that balances these forces.</p>
+<p>Simulations are conducted using both the Brooks and Corey and Van Genuchten models for relative permeability. The parameters for each model are:</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Model</strong></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(p_{c,0}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(m\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brooks and Corey</p></td>
+<td><p>1000</p></td>
+<td><p>–</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Van Genuchten</p></td>
+<td><p>100</p></td>
+<td><p>0.5</p></td>
+<td><p>–</p></td>
+</tr>
+</tbody>
+</table>
+<p>The results show the establishment of a stable saturation profile as the system reaches equilibrium. These profiles demonstrate the interaction between capillary pressure and gravity, with good agreement between theoretical predictions and numerical findings.</p>
+<p>Visual representations of the results for both models are shown below:</p>
+<ul class="simple">
+<li><p><strong>Brooks and Corey model:</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_BrooksAndCorey.png"><img alt="Capillary_Brooks.png" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_BrooksAndCorey.png" style="width: 500px;" /></a>
+</figure>
+</td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_BrooksAndCorey.png"><img alt="Capillary_Brooks.png" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_BrooksAndCorey.png" style="width: 500px;" /></a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Van Genuchten model:</strong></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_VanGenuchten.png"><img alt="Capillary_Brooks.png" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_VanGenuchten.png" style="width: 500px;" /></a>
+</figure>
+</td>
+<td><figure class="align-default">
+<a class="reference internal image-reference" href="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_VanGenuchten.png"><img alt="Capillary_Brooks.png" src="file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_VanGenuchten.png" style="width: 500px;" /></a>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="groundwaterTransportFoam-tutorials.html" class="btn btn-neutral float-left" title="groundwaterTransportFoam-tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="porousScalarTransport2DFoam-tutorials.html" class="btn btn-neutral float-right" title="porousScalarTransport2DFoam-tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

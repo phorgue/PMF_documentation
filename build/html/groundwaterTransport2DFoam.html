@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>groundwaterTransport2DFoam solver &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="groundwaterTransportFoam solver" href="groundwaterTransportFoam.html" />
+    <link rel="prev" title="groundwaterFoam solver" href="groundwaterFoam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="solvers.html">Solvers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam.html">anisoImpesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam.html">groundwater2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam.html">groundwaterFoam solver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">groundwaterTransport2DFoam solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-files">Configuration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timestep-managing">Timestep managing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam.html">groundwaterTransportFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam.html">impesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam.html">porousScalarTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam.html">porousScalarTransportFoam solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="solvers.html">Solvers</a></li>
+      <li class="breadcrumb-item active">groundwaterTransport2DFoam solver</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/groundwaterTransport2DFoam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="groundwatertransport2dfoam-solver">
+<span id="groundwatertransport2dfoam"></span><h1>groundwaterTransport2DFoam solver<a class="headerlink" href="#groundwatertransport2dfoam-solver" title="Permalink to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>This solver is a merge between <a class="reference internal" href="groundwater2DFoam.html#groundwater2dfoam"><span class="std std-ref">groundwater2DFoam solver</span></a> and <a class="reference internal" href="porousScalarTransport2DFoam.html#porousscalartransport2dfoam"><span class="std std-ref">porousScalarTransport2DFoam solver</span></a> (see dedicated documentation pages for details).</p>
+<p>At each time iteration, it solves</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the free-surface flow equation in porous media</p></li>
+<li><p>passive scalar transport equation for the species</p></li>
+</ul>
+</div></blockquote>
+<p>Time-dependent infiltration can be specified using the keyword <em>infiltrationEventFile</em> in <strong>constant/transportProperties</strong> (see <a class="reference internal" href="infiltrationEventFile.html#infiltrationeventfile"><span class="std std-ref">infiltrationEventFile class</span></a>).</p>
+<p>Multiple time-dependent tracer injection source points can be specified using the keyword <em>sourceEventFileTracer</em> in <strong>constant/transportProperties</strong> (see <a class="reference internal" href="sourceEventFile.html#sourceeventfile"><span class="std std-ref">sourceEventFile class</span></a>).</p>
+</section>
+<section id="configuration-files">
+<h2>Configuration files<a class="headerlink" href="#configuration-files" title="Permalink to this heading"></a></h2>
+<p><strong>constant/transportProperties :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">fluid</span> <span class="ow">and</span> <span class="n">medium</span> <span class="n">properties</span>
+<span class="n">eps</span> <span class="n">eps</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.27</span><span class="p">;</span> <span class="o">//</span> <span class="n">porosity</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">volScalarField</span> <span class="ow">in</span> <span class="n">constant</span><span class="o">/</span><span class="p">)</span>
+<span class="n">rho</span> <span class="n">rho</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">1000</span><span class="p">;</span> <span class="o">//</span> <span class="n">density</span>
+<span class="n">mu</span> <span class="n">mu</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-03</span><span class="p">;</span> <span class="o">//</span> <span class="n">viscosity</span>
+
+<span class="n">infiltration</span> <span class="n">infiltration</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-</span><span class="mf">5e-9</span><span class="p">;</span> <span class="o">//</span> <span class="n">constant</span> <span class="n">uniform</span> <span class="n">infiltration</span> <span class="n">velocity</span>
+
+<span class="n">infiltrationEventFile</span> <span class="s2">&quot;infiltrationOverTime.dat&quot;</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">time</span><span class="o">-</span><span class="n">varying</span> <span class="n">infiltration</span> <span class="p">(</span><span class="n">uniform</span> <span class="ow">or</span> <span class="n">non</span><span class="o">-</span><span class="n">uniform</span><span class="p">)</span>
+
+<span class="n">seepage</span> <span class="n">yes</span><span class="p">;</span> <span class="o">//</span> <span class="n">Seepage</span> <span class="n">activation</span> <span class="p">(</span><span class="n">requires</span> <span class="n">constant</span><span class="o">/</span><span class="n">potentialDEM</span> <span class="n">field</span><span class="p">)</span>
+
+<span class="n">fileDEM</span> <span class="n">dem</span><span class="o">.</span><span class="n">xyz</span><span class="p">;</span> <span class="o">//</span><span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">mnt</span> <span class="n">file</span> <span class="n">read</span> <span class="n">by</span> <span class="n">solver</span> <span class="n">to</span> <span class="n">construct</span> <span class="n">constant</span><span class="o">/</span><span class="n">potentialDEM</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">present</span>
+
+<span class="n">fixedPotentialList</span> <span class="o">//</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">fixed</span> <span class="n">potential</span> <span class="n">positions</span> <span class="p">(</span><span class="ow">and</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">potential</span> <span class="n">values</span><span class="p">)</span>
+<span class="p">(</span>
+    <span class="p">(</span> <span class="p">(</span><span class="mf">584256.50</span> <span class="mf">2413589.00</span> <span class="mi">1</span><span class="p">)</span> <span class="mf">145.2</span><span class="p">)</span>
+    <span class="p">(</span> <span class="p">(</span><span class="mf">584556.50</span> <span class="mf">2413889.00</span> <span class="mi">1</span><span class="p">)</span> <span class="mf">149.3</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="n">useDEMtoFixPotential</span> <span class="n">yes</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="n">use</span> <span class="n">potentialDEM</span> <span class="n">values</span> <span class="n">to</span> <span class="n">impose</span> <span class="n">potential</span> <span class="p">(</span><span class="n">instead</span> <span class="n">of</span> <span class="n">user</span><span class="o">-</span><span class="n">defined</span> <span class="n">potential</span> <span class="n">values</span><span class="p">)</span>
+
+<span class="n">Dm</span> <span class="n">Dm</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-9</span><span class="p">;</span> <span class="o">//</span> <span class="n">molecular</span> <span class="n">diffusion</span>
+
+<span class="n">porousTransport</span> <span class="o">//</span> <span class="n">specific</span> <span class="n">dictionary</span> <span class="k">for</span> <span class="n">transport</span>
+<span class="p">{</span>
+    <span class="n">Kd</span> <span class="n">Kd</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-3</span><span class="p">;</span>
+    <span class="n">rs</span> <span class="n">rs</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="n">epsTotal</span> <span class="n">epsTotal</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.30</span><span class="p">;</span>
+    <span class="k">lambda</span> <span class="k">lambda</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">]</span> <span class="mi">0</span><span class="p">;</span><span class="o">//</span> <span class="n">decay</span> <span class="n">of</span> <span class="n">the</span> <span class="n">C</span> <span class="n">scalar</span>
+<span class="p">}</span>
+
+<span class="n">dispersionModel</span> <span class="n">alphaDispersion</span><span class="p">;</span> <span class="o">//</span> <span class="n">dispersion</span> <span class="n">model</span>
+
+<span class="n">alphaDispersionCoeffs</span>
+<span class="p">{</span>
+    <span class="n">tau</span> <span class="n">tau</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">2</span><span class="p">;</span> <span class="o">//</span> <span class="n">tortuosity</span>
+    <span class="n">alphaL</span> <span class="n">alphaL</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.01</span><span class="p">;</span> <span class="o">//</span> <span class="n">longitudinal</span> <span class="n">dispersivity</span>
+    <span class="n">alphaT</span> <span class="n">alphaT</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.002</span><span class="p">;</span> <span class="o">//</span> <span class="n">transverse</span> <span class="n">dispersivity</span>
+<span class="p">}</span>
+
+<span class="n">sourceEventFileTracer</span> <span class="n">injection</span><span class="o">.</span><span class="n">dat</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">event</span> <span class="n">file</span> <span class="k">for</span> <span class="n">time</span><span class="o">-</span><span class="n">dependent</span> <span class="n">source</span> <span class="n">term</span>
+</pre></div>
+</div>
+<p><strong>system/controlDict :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adjustTimeStep</span> <span class="n">yes</span><span class="p">;</span>
+
+<span class="o">//-</span> <span class="k">for</span> <span class="n">Scalar</span> <span class="n">transport</span> <span class="n">time</span> <span class="n">step</span> <span class="n">control</span>
+<span class="n">truncationError</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="k">global</span> <span class="n">truncation</span> <span class="n">error</span> <span class="n">used</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">time</span><span class="o">-</span><span class="n">step</span>
+<span class="n">truncationError_potential</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">potential</span> <span class="n">only</span> <span class="n">truncation</span> <span class="n">error</span> <span class="n">used</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">time</span><span class="o">-</span><span class="n">step</span>
+<span class="n">truncationkError_C</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">tracer</span> <span class="n">only</span> <span class="n">truncation</span> <span class="n">error</span> <span class="n">used</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">time</span><span class="o">-</span><span class="n">step</span>
+
+<span class="n">CSVoutput</span>       <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">active</span> <span class="n">the</span> <span class="n">CmassBalance</span><span class="o">.</span><span class="n">csv</span> <span class="n">output</span>
+
+<span class="n">eventTimeTracking</span> <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">force</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">solutions</span> <span class="n">at</span> <span class="n">each</span> <span class="n">event</span> <span class="n">time</span> <span class="p">(</span><span class="n">patch</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="required-fields">
+<h2>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>0/potential :</strong> The potential field</p></li>
+<li><p><strong>0/U :</strong> The velocity field</p></li>
+<li><p><strong>0/C :</strong> The concentration field</p></li>
+<li><p><strong>constant/z0 :</strong> height of the impermeable layer</p></li>
+<li><p><strong>constant/K :</strong> permeability field</p></li>
+</ul>
+</section>
+<section id="optional-fields">
+<h2>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Other spatially defined parameters : <strong>alphaL</strong> , <strong>alphaT</strong> , <strong>eps</strong>.</p></li>
+<li><p><strong>0/infiltration :</strong> infiltration velocity field (replace infiltration in transport properties)</p></li>
+</ul>
+</section>
+<section id="timestep-managing">
+<h2>Timestep managing<a class="headerlink" href="#timestep-managing" title="Permalink to this heading"></a></h2>
+<p>The timestep is managed as for the two original solvers, taking the minimal deltaT required by water transport and scalar transport (with eventually different truncation error parameters for <strong>C</strong> and <strong>potential</strong>).</p>
+<p>See <a class="reference internal" href="groundwater2DFoam.html#groundwater2dfoam"><span class="std std-ref">groundwater2DFoam solver</span></a> and <a class="reference internal" href="porousScalarTransport2DFoam.html#porousscalartransport2dfoam"><span class="std std-ref">porousScalarTransport2DFoam solver</span></a> for more information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="groundwaterFoam.html" class="btn btn-neutral float-left" title="groundwaterFoam solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="groundwaterTransportFoam.html" class="btn btn-neutral float-right" title="groundwaterTransportFoam solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

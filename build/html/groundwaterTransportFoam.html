@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>groundwaterTransportFoam solver &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="impesFoam solver" href="impesFoam.html" />
+    <link rel="prev" title="groundwaterTransport2DFoam solver" href="groundwaterTransport2DFoam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="solvers.html">Solvers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="anisoImpesFoam.html">anisoImpesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam.html">groundwater2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam.html">groundwaterFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam.html">groundwaterTransport2DFoam solver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">groundwaterTransportFoam solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-files">Configuration files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-fields">Required fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-fields">Optional fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timestep-managing">Timestep managing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam.html">impesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam.html">porousScalarTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam.html">porousScalarTransportFoam solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="solvers.html">Solvers</a></li>
+      <li class="breadcrumb-item active">groundwaterTransportFoam solver</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/groundwaterTransportFoam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="groundwatertransportfoam-solver">
+<span id="groundwatertransportfoam"></span><h1>groundwaterTransportFoam solver<a class="headerlink" href="#groundwatertransportfoam-solver" title="Permalink to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>This solver is a merge between <a class="reference internal" href="groundwaterFoam.html#groundwaterfoam"><span class="std std-ref">groundwaterFoam solver</span></a> and <a class="reference internal" href="porousScalarTransportFoam.html#porousscalartransportfoam"><span class="std std-ref">porousScalarTransportFoam solver</span></a> (see dedicated pages for details)</p>
+<p>At each time iteration, it solves</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the Richards’ equation for the water flow</p></li>
+<li><p>passive scalar transport equation for the species</p></li>
+</ul>
+</div></blockquote>
+<p>Multiple time-dependent water injection source points can be specified using the keyword <em>sourceEventFileWater</em> in <strong>constant/transportProperties</strong> (see <a class="reference internal" href="sourceEventFile.html#sourceeventfile"><span class="std std-ref">sourceEventFile class</span></a>).</p>
+<p>Multiple time-dependent tracer injection source points can be specified using the keyword <em>sourceEventFileTracer</em> in <strong>constant/transportProperties</strong> (see <a class="reference internal" href="sourceEventFile.html#sourceeventfile"><span class="std std-ref">sourceEventFile class</span></a>).</p>
+<p>As <a class="reference internal" href="groundwaterFoam.html#groundwaterfoam"><span class="std std-ref">groundwaterFoam solver</span></a>, this solver allows the use of <em>dualPorosity</em> model for both flow and transport, see <a class="reference internal" href="porousMediumModels.html#porousmediummodels"><span class="std std-ref">Porous medium models</span></a> and <a class="reference internal" href="porousMediumTransportModels.html#porousmediumtransportmodels"><span class="std std-ref">porousMediumTransportModels</span></a> for details.</p>
+</section>
+<section id="configuration-files">
+<h2>Configuration files<a class="headerlink" href="#configuration-files" title="Permalink to this heading"></a></h2>
+<p><strong>constant/transportProperties :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ss</span> <span class="n">Ss</span> <span class="p">[</span><span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">specific</span> <span class="n">storage</span>
+
+<span class="n">phase</span><span class="o">.</span><span class="n">theta</span>
+<span class="p">{</span>
+    <span class="n">rho</span> <span class="n">rho</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e3</span><span class="p">;</span> <span class="o">//</span> <span class="n">density</span> <span class="n">of</span> <span class="n">the</span> <span class="n">fluid</span>
+    <span class="n">mu</span> <span class="n">mu</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-3</span><span class="p">;</span> <span class="o">//</span> <span class="n">dynamic</span> <span class="n">viscosity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">fluid</span>
+<span class="p">}</span>
+
+<span class="n">relativePermeabilityModel</span>  <span class="n">VanGenuchten</span><span class="p">;</span>
+
+<span class="n">capillarityModel</span>    <span class="n">VanGenuchten</span><span class="p">;</span>
+
+<span class="n">VanGenuchtenCoeffs</span> <span class="o">//</span> <span class="n">parameters</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Van</span> <span class="n">Genuchten</span> <span class="n">kr</span><span class="o">/</span><span class="n">pc</span> <span class="n">model</span>
+<span class="p">{</span>
+    <span class="n">thetamin</span> <span class="mf">0.102</span><span class="p">;</span> <span class="o">//</span> <span class="n">minimal</span> <span class="n">saturation</span>
+    <span class="n">thetamax</span> <span class="mf">0.368</span><span class="p">;</span> <span class="o">//</span> <span class="n">maximal</span> <span class="n">saturation</span>
+    <span class="n">m</span> <span class="mf">0.5</span><span class="p">;</span>
+    <span class="n">alpha</span> <span class="mf">3.35</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">eps</span> <span class="n">eps</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.25</span><span class="p">;</span> <span class="o">//</span> <span class="n">porosity</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="n">volScalarField</span> <span class="ow">in</span> <span class="n">constant</span><span class="o">/</span><span class="p">)</span>
+
+<span class="n">Dm</span> <span class="n">Dm</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-9</span><span class="p">;</span> <span class="o">//</span> <span class="n">molecular</span> <span class="n">diffusion</span>
+
+<span class="n">porousTransport</span> <span class="o">//</span> <span class="n">specific</span> <span class="n">dictionary</span> <span class="k">for</span> <span class="n">transport</span>
+<span class="p">{</span>
+    <span class="n">phaseName</span> <span class="n">a</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">flux</span> <span class="n">field</span> <span class="p">(</span><span class="n">phia</span> <span class="n">here</span><span class="p">)</span> <span class="ow">and</span> <span class="n">velocity</span> <span class="n">field</span> <span class="p">(</span><span class="n">Ua</span><span class="p">)</span>
+    <span class="n">Kd</span> <span class="n">Kd</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-3</span><span class="p">;</span>
+    <span class="n">rs</span> <span class="n">rs</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">1000</span><span class="p">;</span>
+    <span class="n">epsTotal</span> <span class="n">epsTotal</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.30</span><span class="p">;</span>
+    <span class="k">lambda</span> <span class="k">lambda</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">]</span> <span class="mi">0</span><span class="p">;</span><span class="o">//</span> <span class="n">decay</span> <span class="n">of</span> <span class="n">the</span> <span class="n">C</span> <span class="n">scalar</span>
+<span class="p">}</span>
+
+<span class="n">dispersionModel</span> <span class="n">alphaDispersion</span><span class="p">;</span> <span class="o">//</span> <span class="n">dispersion</span> <span class="n">model</span>
+
+<span class="n">alphaDispersionCoeffs</span>
+<span class="p">{</span>
+    <span class="n">tau</span> <span class="n">tau</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mi">2</span><span class="p">;</span> <span class="o">//</span> <span class="n">tortuosity</span>
+    <span class="n">alphaL</span> <span class="n">alphaL</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.01</span><span class="p">;</span> <span class="o">//</span> <span class="n">longitudinal</span> <span class="n">dispersivity</span>
+    <span class="n">alphaT</span> <span class="n">alphaT</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.002</span><span class="p">;</span> <span class="o">//</span> <span class="n">transverse</span> <span class="n">dispersivity</span>
+<span class="p">}</span>
+
+<span class="n">sourceEventFileTracer</span> <span class="n">injection</span><span class="o">.</span><span class="n">dat</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">event</span> <span class="n">file</span> <span class="k">for</span> <span class="n">tracer</span> <span class="n">source</span> <span class="n">term</span>
+<span class="n">sourceEventFileWater</span> <span class="n">water_injection</span><span class="o">.</span><span class="n">dat</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">event</span> <span class="n">file</span> <span class="k">for</span> <span class="n">water</span> <span class="n">source</span> <span class="n">term</span>
+</pre></div>
+</div>
+<p><strong>system/controlDict :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adjustTimeStep</span> <span class="n">yes</span><span class="p">;</span>
+
+<span class="n">timeStepControl</span> <span class="n">Picard</span><span class="p">;</span> <span class="o">//</span> <span class="n">Picard</span> <span class="ow">or</span> <span class="n">dthetamax</span>
+
+<span class="o">//-</span> <span class="k">for</span> <span class="n">h</span> <span class="n">variation</span> <span class="n">time</span> <span class="n">step</span> <span class="n">control</span>
+<span class="n">dthetamax</span>           <span class="mf">0.005</span><span class="p">;</span> <span class="o">//</span> <span class="n">theta</span> <span class="n">variation</span> <span class="n">instruction</span> <span class="k">for</span> <span class="n">computing</span> <span class="n">the</span> <span class="n">time</span> <span class="n">step</span>
+
+<span class="o">//-</span> <span class="k">for</span> <span class="n">time</span> <span class="n">step</span> <span class="n">control</span>
+<span class="n">truncationError</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="k">global</span> <span class="n">truncation</span> <span class="n">error</span> <span class="n">used</span> <span class="n">to</span> <span class="n">manage</span> <span class="n">time</span><span class="o">-</span><span class="n">step</span>
+<span class="n">truncationError_C</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">tracer</span> <span class="n">only</span> <span class="n">truncation</span> <span class="n">error</span>
+<span class="n">truncationError_h</span> <span class="mf">0.001</span><span class="p">;</span> <span class="o">//</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="n">potential</span> <span class="n">only</span> <span class="n">truncation</span> <span class="n">error</span>
+
+<span class="n">CSVoutput</span>       <span class="n">true</span><span class="p">;</span> <span class="o">//</span> <span class="n">active</span> <span class="n">the</span> <span class="n">waterMassBalance</span><span class="o">.</span><span class="n">csv</span> <span class="ow">and</span> <span class="n">CmassBalance</span><span class="o">.</span><span class="n">csv</span> <span class="n">outputs</span>
+
+<span class="n">eventTimeTracking</span> <span class="n">false</span><span class="p">;</span> <span class="o">//</span> <span class="n">to</span> <span class="n">force</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">to</span> <span class="n">compute</span> <span class="n">solutions</span> <span class="n">at</span> <span class="n">each</span> <span class="n">event</span> <span class="n">time</span> <span class="p">(</span><span class="n">patch</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="required-fields">
+<h2>Required fields<a class="headerlink" href="#required-fields" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>0/h :</strong> The potential field</p></li>
+<li><p><strong>0/Utheta :</strong> The velocity field</p></li>
+<li><p><strong>0/C :</strong> The concentration field</p></li>
+<li><p><strong>constant/g :</strong> gravity field</p></li>
+<li><p><strong>constant/K :</strong> permeability field</p></li>
+</ul>
+</section>
+<section id="optional-fields">
+<h2>Optional fields<a class="headerlink" href="#optional-fields" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Other spatially defined parameters : <strong>alphaL</strong> , <strong>alphaT</strong> , <strong>eps</strong>.</p></li>
+<li><p><strong>0/thetamin</strong> and <strong>0/thetamax :</strong> spatialized minimal and maximal saturation (replaces thetamin and thetamax in <strong>transportProperties</strong>)</p></li>
+</ul>
+</section>
+<section id="timestep-managing">
+<h2>Timestep managing<a class="headerlink" href="#timestep-managing" title="Permalink to this heading"></a></h2>
+<p>The timestep is managed as for the two original solvers, taking the minimal deltaT required by water transport and scalar transport (with eventually different truncation error parameters for <strong>C</strong> and <strong>h</strong>)</p>
+<p>See <a class="reference internal" href="groundwaterFoam.html#groundwaterfoam"><span class="std std-ref">groundwaterFoam solver</span></a> and <a class="reference internal" href="porousScalarTransportFoam.html#porousscalartransportfoam"><span class="std std-ref">porousScalarTransportFoam solver</span></a> for more information.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="groundwaterTransport2DFoam.html" class="btn btn-neutral float-left" title="groundwaterTransport2DFoam solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="impesFoam.html" class="btn btn-neutral float-right" title="impesFoam solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

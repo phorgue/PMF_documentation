@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anisoImpesFoam solver &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="groundwater2DFoam solver" href="groundwater2DFoam.html" />
+    <link rel="prev" title="Solvers" href="solvers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="solvers.html">Solvers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">anisoImpesFoam solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-schemes">Numerical Schemes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-files">Configuration Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-fields">Required Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater2DFoam.html">groundwater2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterFoam.html">groundwaterFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransport2DFoam.html">groundwaterTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwaterTransportFoam.html">groundwaterTransportFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="impesFoam.html">impesFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransport2DFoam.html">porousScalarTransport2DFoam solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porousScalarTransportFoam.html">porousScalarTransportFoam solver</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="solvers.html">Solvers</a></li>
+      <li class="breadcrumb-item active">anisoImpesFoam solver</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/anisoImpesFoam.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="anisoimpesfoam-solver">
+<span id="anisoimpesfoam"></span><h1>anisoImpesFoam solver<a class="headerlink" href="#anisoimpesfoam-solver" title="Permalink to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>The <strong>anisoImpesFoam</strong> solver is designed for simulating flow through an anisotropic porous medium. It solves the same set of equations as the <strong>impesFoam</strong> solver, but with the intrinsic permeability <strong>K</strong> treated as a second-order tensor:</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle \nabla \cdot \left[-\frac{\mathbf{K}k_{ra}(S_b)}{\mu_a} \left(\nabla p_a - \rho_a \mathbf{g}\right) \right] + \nabla \cdot \left[-\frac{\mathbf{K}k_{rb}(S_b)}{\mu_b} \left(\nabla p_a - \rho_b \mathbf{g} - \nabla p_c(S_b) \right) \right] = q_a + q_b\]</div>
+<div class="math notranslate nohighlight">
+\[\epsilon \frac{\partial S_b}{\partial t} + \nabla \cdot \mathbf{U_b} = q_b\]</div>
+<p>Where <span class="math notranslate nohighlight">\(k_{ri}(S_b)\)</span> is the relative permeability of the phase <span class="math notranslate nohighlight">\(i\)</span>, whose value between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> depends on the local saturation of the wetting phase <span class="math notranslate nohighlight">\(S_b\)</span>, <span class="math notranslate nohighlight">\(\mu_i\)</span> is the dynamic viscosity, <span class="math notranslate nohighlight">\(\rho_i\)</span> is the density, <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is the gravity field <span class="math notranslate nohighlight">\(\left(\mathbf{g} = -9,81 \vec{e_y}\right)\)</span>, <span class="math notranslate nohighlight">\(p_c(S_b)\)</span> is the macro-scale capillary pressure depending on the saturation <span class="math notranslate nohighlight">\(S_b\)</span>, <span class="math notranslate nohighlight">\(p_a\)</span> is the pressure of the phase <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(q_i\)</span> is a source term (used for injection or extraction wells), <span class="math notranslate nohighlight">\(\epsilon\)</span> is the domain porosity, and <span class="math notranslate nohighlight">\(\mathbf{U_b}\)</span> is the velocity field of the phase <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Note that the <strong>anisoImpesFoam</strong> solver can also be used for isotropic cases, although this will result in higher memory and computation costs due to the added complexity.</p>
+</section>
+<section id="numerical-schemes">
+<h2>Numerical Schemes<a class="headerlink" href="#numerical-schemes" title="Permalink to this heading"></a></h2>
+<p>Due to the significant impact of saturation on the relative permeabilities and capillary pressure, each field <span class="math notranslate nohighlight">\(\left(k_{ri}, \mathbf{K}, \frac{\partial p_c}{\partial S_b}\right)\)</span> has a user-defined interpolation scheme that can be modified in the simulation configuration files. The following are typical numerical schemes used in validation cases:</p>
+<ul class="simple">
+<li><p><strong>Relative permeability</strong> <span class="math notranslate nohighlight">\(k_{ri}\)</span> is treated using a first-order upwind scheme, providing stability in the presence of sharp saturation fronts.</p></li>
+<li><p><strong>Permeability tensor</strong> <span class="math notranslate nohighlight">\(\mathbf{K}\)</span> is calculated using a harmonic average to handle high heterogeneity in the domain.</p></li>
+<li><p><strong>Capillary pressure derivative</strong> <span class="math notranslate nohighlight">\(\frac{\partial p_c}{\partial S_b}\)</span> is interpolated linearly.</p></li>
+</ul>
+</section>
+<section id="configuration-files">
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this heading"></a></h2>
+<p><strong>constant/transportProperties</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">activateCapillarity</span> <span class="mf">0.</span><span class="p">;</span>
+
+<span class="n">eps</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">0.5</span><span class="p">;</span>
+
+<span class="n">phase</span><span class="o">.</span><span class="n">a</span>
+<span class="p">{</span>
+  <span class="n">rho</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1.0</span><span class="p">;</span>
+  <span class="n">mu</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1.76e-5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">phase</span><span class="o">.</span><span class="n">b</span>
+<span class="p">{</span>
+  <span class="n">rho</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e3</span><span class="p">;</span>
+  <span class="n">mu</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span> <span class="mf">1e-3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">relativePermeabilityModel</span>   <span class="n">BrooksAndCorey</span><span class="p">;</span>
+
+<span class="n">capillarityModel</span>        <span class="n">BrooksAndCorey</span><span class="p">;</span>
+
+<span class="n">BrooksAndCoreyCoeffs</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">Relative</span> <span class="n">permeability</span> <span class="p">(</span><span class="n">kr</span><span class="p">)</span> <span class="n">parameters</span>
+    <span class="n">n</span> <span class="mi">3</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Capillary</span> <span class="n">pressure</span> <span class="p">(</span><span class="n">pc</span><span class="p">)</span> <span class="n">parameters</span>
+    <span class="n">pc0</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">alpha</span> <span class="mf">0.2</span><span class="p">;</span>
+
+    <span class="n">Sbmin</span> <span class="mf">0.001</span><span class="p">;</span>
+    <span class="n">Sbmax</span> <span class="mf">0.999</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">sourceEventFileWater</span> <span class="s2">&quot;injection.evt&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>system/fvSolution</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span>
+<span class="p">{</span>
+    <span class="n">p</span>
+    <span class="p">{</span>
+        <span class="n">solver</span>          <span class="n">PCG</span><span class="p">;</span>
+        <span class="n">preconditioner</span>  <span class="n">DIC</span><span class="p">;</span>
+        <span class="n">tolerance</span>       <span class="mf">1e-12</span><span class="p">;</span>
+        <span class="n">relTol</span>          <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Sb</span>
+    <span class="p">{</span>
+        <span class="n">solver</span>         <span class="n">no_solver_required</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>system/controlDict</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">application</span>     <span class="n">anisoImpesFoam</span><span class="p">;</span>
+
+<span class="n">startFrom</span>       <span class="n">latestTime</span><span class="p">;</span>
+
+<span class="n">startTime</span>       <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">stopAt</span>          <span class="n">endTime</span><span class="p">;</span>
+
+<span class="n">endTime</span>         <span class="mi">2500</span><span class="p">;</span>
+
+<span class="n">deltaT</span>          <span class="mf">1e-5</span><span class="p">;</span>
+
+<span class="n">writeControl</span>    <span class="n">adjustableRunTime</span><span class="p">;</span>
+
+<span class="n">writeInterval</span>   <span class="mi">250</span><span class="p">;</span>
+
+<span class="n">purgeWrite</span>      <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">writeFormat</span>     <span class="n">ascii</span><span class="p">;</span>
+
+<span class="n">writePrecision</span>  <span class="mi">6</span><span class="p">;</span>
+
+<span class="n">writeCompression</span> <span class="n">off</span><span class="p">;</span>
+
+<span class="n">timeFormat</span>      <span class="n">general</span><span class="p">;</span>
+
+<span class="n">timePrecision</span>   <span class="mi">6</span><span class="p">;</span>
+
+<span class="n">runTimeModifiable</span> <span class="n">yes</span><span class="p">;</span>
+
+<span class="n">CFL</span>             <span class="n">Coats</span><span class="p">;</span>
+
+<span class="n">maxCo</span>           <span class="mi">1</span><span class="p">;</span>
+
+<span class="n">dSmax</span>           <span class="mi">1</span><span class="p">;</span>
+
+<span class="n">maxDeltaT</span>       <span class="mi">10000</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="required-fields">
+<h2>Required Fields<a class="headerlink" href="#required-fields" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>0/p</strong>: initial pressure field in the domain with boundary conditions</p></li>
+<li><p><strong>0/Sb.org</strong>: initial saturation field for phase <span class="math notranslate nohighlight">\(b\)</span> in the domain with boundary conditions</p></li>
+<li><p><strong>0/Ua</strong>: initial velocity field for phase <span class="math notranslate nohighlight">\(a\)</span> in the domain with boundary conditions</p></li>
+<li><p><strong>0/Ub</strong>: initial velocity field for phase <span class="math notranslate nohighlight">\(b\)</span> in the domain with boundary conditions</p></li>
+<li><p><strong>constant/g</strong>: gravity field</p></li>
+<li><p><strong>constant/K.org</strong>: permeability field</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solvers.html" class="btn btn-neutral float-left" title="Solvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="groundwater2DFoam.html" class="btn btn-neutral float-right" title="groundwater2DFoam solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

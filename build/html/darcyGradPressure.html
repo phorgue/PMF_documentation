@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>darcyGradPressure BC &mdash; porousMultiphaseFoam dev documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=fbd91e05"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="darcyGradPressureAniso BC" href="darcyGradPressureAniso.html" />
+    <link rel="prev" title="porousBoundaryConditions library" href="porousBoundaryConditions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            porousMultiphaseFoam
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="libraries.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="numericalMethods.html">numericalMethods library</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="porousBoundaryConditions.html">porousBoundaryConditions library</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">darcyGradPressure BC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver-specificities">Solver specificities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comments">Comments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="darcyGradPressureAniso.html">darcyGradPressureAniso BC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eventFlux.html">eventFlux BC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eventInfiltration.html">eventInfiltration BC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porousModels.html">porousModels library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolsGIS.html">toolsGIS library</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/phorgue/porousMultiphaseFoam">Source repository</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">porousMultiphaseFoam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="libraries.html">Libraries</a></li>
+          <li class="breadcrumb-item"><a href="porousBoundaryConditions.html">porousBoundaryConditions library</a></li>
+      <li class="breadcrumb-item active">darcyGradPressure BC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/darcyGradPressure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="darcygradpressure-bc">
+<span id="darcygradpressure"></span><h1>darcyGradPressure BC<a class="headerlink" href="#darcygradpressure-bc" title="Permalink to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>This boundary condition provides a fixed gradient condition for pressure <strong>p</strong>, pressure head <strong>h</strong> or potential <strong>potential</strong> to impose fixed Darcy velocity. After computing the flux <strong>phi</strong> corresponding to the fixed velocity <strong>U</strong>, fixed gradient is computed as:</p>
+<blockquote>
+<div><p><strong>grad(p) = - (phi-phiG-phiPc)/M</strong></p>
+</div></blockquote>
+<p>where <strong>phi</strong> is the total flux, <strong>phiG</strong> the gravity-induced flux, <strong>phiPc</strong> capillary-induced flux and <strong>M</strong> the phase mobility (depends on the solver used)</p>
+</section>
+<section id="solver-specificities">
+<h2>Solver specificities<a class="headerlink" href="#solver-specificities" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>all solvers except <a class="reference internal" href="impesFoam.html#impesfoam"><span class="std std-ref">impesFoam solver</span></a>: <strong>phiPc = 0</strong></p></li>
+<li><p>saturated <em>quasi-2D</em> solvers (<a class="reference internal" href="groundwater2DFoam.html#groundwater2dfoam"><span class="std std-ref">groundwater2DFoam solver</span></a>, <a class="reference internal" href="groundwaterTransport2DFoam.html#groundwatertransport2dfoam"><span class="std std-ref">groundwaterTransport2DFoam solver</span></a>) : <strong>phiG = 0</strong></p></li>
+<li><p>Phase mobility expression:</p>
+<blockquote>
+<div><ul>
+<li><p>Two-phase flow solver: <strong>M = K x kr / mu</strong> with <strong>K</strong> the permeability, <strong>kr</strong> the relative permeability and <strong>mu</strong> the dynamic viscosity.</p>
+<blockquote>
+<div><p><a class="reference internal" href="impesFoam.html#impesfoam"><span class="std std-ref">impesFoam solver</span></a></p>
+</div></blockquote>
+</li>
+<li><p>saturated <em>quasi-2D</em> solvers: <strong>K x g x rho / mu</strong>: with <strong>g</strong> the gravity and <strong>rho</strong> the density</p>
+<blockquote>
+<div><p><a class="reference internal" href="groundwater2DFoam.html#groundwater2dfoam"><span class="std std-ref">groundwater2DFoam solver</span></a>, <a class="reference internal" href="groundwaterTransport2DFoam.html#groundwatertransport2dfoam"><span class="std std-ref">groundwaterTransport2DFoam solver</span></a></p>
+</div></blockquote>
+</li>
+<li><p>unsaturated <em>groundwater</em> solvers: <strong>K x g x rho x kr / mu</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="groundwaterFoam.html#groundwaterfoam"><span class="std std-ref">groundwaterFoam solver</span></a>, <a class="reference internal" href="groundwaterTransportFoam.html#groundwatertransportfoam"><span class="std std-ref">groundwaterTransportFoam solver</span></a></p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">patchName</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="nb">type</span>            <span class="n">darcyGradPressure</span><span class="p">;</span>
+    <span class="n">phiName</span>         <span class="n">phi</span><span class="p">;</span> <span class="o">//</span> <span class="n">optional</span> <span class="p">(</span><span class="n">phi</span> <span class="n">by</span> <span class="n">default</span><span class="p">)</span>
+    <span class="n">value</span>           <span class="n">uniform</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span> <span class="n">optional</span> <span class="n">initial</span> <span class="n">value</span> <span class="p">(</span><span class="n">necessary</span> <span class="k">for</span> <span class="n">paraview</span> <span class="n">display</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading"></a></h2>
+<p>This boundary generally requires a <em>fixedValue</em> BC on velocity which may be variable in time and in space (<strong>darcyGradPressure</strong> updates pressure gradient at each time iteration).</p>
+</section>
+<section id="restrictions">
+<h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this heading"></a></h2>
+<p>This boundary works for most solvers except <a class="reference internal" href="anisoImpesFoam.html#anisoimpesfoam"><span class="std std-ref">anisoImpesFoam solver</span></a> which requires the use of  <a class="reference internal" href="darcyGradPressureAniso.html#darcygradpressureaniso"><span class="std std-ref">darcyGradPressureAniso BC</span></a> due to its <em>tensorial</em> permeability field.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="porousBoundaryConditions.html" class="btn btn-neutral float-left" title="porousBoundaryConditions library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="darcyGradPressureAniso.html" class="btn btn-neutral float-right" title="darcyGradPressureAniso BC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Toulouse INP/IMFT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
