@@ -26,11 +26,11 @@ The water and solute fluxes leaving the column are shown in the following images
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/solute_flux.png
+   * - .. figure:: figures/groundwaterTransportFoam/solute_flux.png
         :width: 500px
         :alt: solute flux
      
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/water_flux.png
+     - .. figure:: figures/groundwaterTransportFoam/water_flux.png
         :width: 500px
         :alt: water flux
 
@@ -40,7 +40,7 @@ At the beginning of the simulation, during rapid water injection, small time ste
 
 The figure below depicts the time-step evolution over the simulation's duration:
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterTransportFoam/timeStep_evolution.png
+.. figure:: figures/groundwaterTransportFoam/timeStep_evolution.png
         :width: 500px
         :alt: time step evolution
         :align: center

@@ -16,17 +16,17 @@ Tracer concentration fields at different times are presented below:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/porousScalarTransport2DFoam/concentration_vizu_t02.png
+   * - .. figure:: figures/2D_solver/porousScalarTransport2DFoam/concentration_vizu_t02.png
         :width: 500px
         :alt: tracer concentration at t1
 
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/porousScalarTransport2DFoam/concentration_vizu_tend.png
+     - .. figure:: figures/2D_solver/porousScalarTransport2DFoam/concentration_vizu_tend.png
         :width: 500px
         :alt: tracer concentration at t2
 
 The comparison between the tracer concentration at probes A and B confirms the correct behavior of the transport model:
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/porousScalarTransport2DFoam/tracer_concentrations.png
+.. figure:: figures/2D_solver/porousScalarTransport2DFoam/tracer_concentrations.png
         :width: 500px
         :alt: tracer probes comparison
         :align: center

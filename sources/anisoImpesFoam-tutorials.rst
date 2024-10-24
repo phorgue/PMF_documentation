@@ -32,15 +32,15 @@ The following images show the saturation distribution of the wetting phase for t
 
 - **Case 1:**
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/anisoImpesFoam/case1/visuMeshWettingPhase.png
-	:width: 800px
+.. figure:: figures/anisoImpesFoam/case1/visuMeshWettingPhase.png
+	:width: 500px
 	:alt: Saturation distribution for Case 1
 	:align: center
 	
 - **Case 2:**
 	
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/anisoImpesFoam/case2/visuMeshWettingPhase.png
-	:width: 800px
+.. figure:: figures/anisoImpesFoam/case2/visuMeshWettingPhase.png
+	:width: 500px
 	:alt: Saturation distribution for Case 2
 	:align: center
 	

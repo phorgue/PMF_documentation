@@ -17,8 +17,7 @@ Solvers
    
 .. _2D-solver-introduction-solvers:
 
-2D Solvers for Groundwater Modeling
------------------------------------
+**2D Solvers for Groundwater Modeling**
 
 The 2D solvers provided in this toolbox are designed for efficient modeling of groundwater flows in porous media. These solvers leverage the Dupuit-Forchheimer approximation, which simplifies the problem by reducing it to two dimensions, assuming the vertical velocity component is negligible.
 
@@ -40,11 +39,11 @@ Here a quick view of the watershed for every 2D validation cases:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/2D_watershed_modeling/mesh.png
+   * - .. figure:: figures/2D_watershed_modeling/mesh.png
         :width: 500px
         :alt: mesh
 
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/2D_watershed_modeling/permeability_field.png
+     - .. figure:: figures/2D_watershed_modeling/permeability_field.png
         :width: 500px
         :alt: permeability_field
         
@@ -52,11 +51,13 @@ Here a quick view of the watershed for every 2D validation cases:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/2D_watershed_modeling/DEM_for_lower_limit.png
+   * - .. figure:: figures/2D_watershed_modeling/DEM_for_lower_limit.png
         :width: 500px
         :alt: DEM_for_lower_limit
 
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/2D_watershed_modeling/DEM_for_upper_limit.png
+     - .. figure:: figures/2D_watershed_modeling/DEM_for_upper_limit.png
         :width: 500px
         :alt: DEM_for_upper_limit
+        
+With: (a) Mesh - (b) Permeability field - (c) DEM for upper limit - (d) DEM for lower limit
 

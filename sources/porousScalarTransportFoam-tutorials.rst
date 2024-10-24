@@ -14,7 +14,7 @@ The simulation spans a physical time of approximately :math:`1.262 \times 10^9` 
 
 The figure below shows the solute flux exiting the column, comparing results from the **porousScalarTransportFoam** solver and the **METIS** solver (our reference solution):
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/porousScalarTransportFoam/tracer.png
+.. figure:: figures/porousScalarTransportFoam/tracer.png
         :width: 500px
         :alt: tracer injection porousScalarTransportFoam
         :align: center

@@ -19,11 +19,11 @@ The solver computes the distribution of water potential and velocity across the 
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/steadyGroundwater2DFoam/velocity_potential_fields.png
+   * - .. figure:: figures/2D_solver/steadyGroundwater2DFoam/velocity_potential_fields.png
         :width: 500px
         :alt: steady state velocity and potential fields
 
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/steadyGroundwater2DFoam/comparison_METIS_PMF.png
+     - .. figure:: figures/2D_solver/steadyGroundwater2DFoam/comparison_METIS_PMF.png
         :width: 500px
         :alt: steady state comparison_METIS_PMF
         
@@ -34,8 +34,8 @@ This case starts from the steady-state configuration described above. The infilt
 
 The evolution of water potential at two selected probes (A and B) over time shows a good agreement with the reference solution, validating the transient behavior of the solver:
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/groundwater2DFoam/comparison_potential_variation_A_B.png
-        :width: 500px
+.. figure:: figures/2D_solver/groundwater2DFoam/comparison_potential_variation_A_B.png
+        :width: 600px
         :alt: comparison of water potential at probes for transient case
         :align: center
 

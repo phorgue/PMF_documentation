@@ -104,7 +104,7 @@ Visual results for the steady-state saturation profile:
 
 - **Saturation profile for the steady flow case:**
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/steady/steady.png
+.. figure:: figures/groundwaterFoam/steady/steady.png
    :width: 500px
    :alt: Steady Flow Saturation Profile
    :align: center
@@ -137,7 +137,7 @@ The comparison of water flow rates:
 
 - **Water flow rate comparison for the transient flow case:**
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/groundwaterFoam/transient/transient.png
+.. figure:: figures/groundwaterFoam/transient/transient.png
    :width: 500px
    :alt: Transient Flow Rate
    :align: center

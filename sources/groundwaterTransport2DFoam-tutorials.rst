@@ -12,7 +12,7 @@ Starting from the steady-state simulation, this case models the coupled transpor
 
 Comparison of solute concentration at probes A and B over time:
 
-.. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/2D_solver/groundwaterTransport2DFoam/concentrations_probes_A_B.png
+.. figure:: figures/2D_solver/groundwaterTransport2DFoam/concentrations_probes_A_B.png
         :width: 500px
         :alt: solute probes comparison
         :align: center

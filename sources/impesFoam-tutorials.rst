@@ -67,11 +67,11 @@ Here are visual comparisons for both cases, showing excellent agreement between 
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_gravity.png
+   * - .. figure:: figures/impesFoam/BL_Brooks_gravity.png
         :width: 500px
         :alt: Buckley-Leverett Brooks and Corey gravity case
      
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_Brooks_noGravity.png
+     - .. figure:: figures/impesFoam/BL_Brooks_noGravity.png
         :width: 500px
         :alt: Buckley-Leverett Brooks and Corey no gravity case
 
@@ -81,11 +81,11 @@ Here are visual comparisons for both cases, showing excellent agreement between 
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_gravity.png
+   * - .. figure:: figures/impesFoam/BL_VanGenuchten_gravity.png
         :width: 500px
         :alt: Buckley-Leverett Van Genuchten gravity case
      
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/BL_VanGenuchten_noGravity.png
+     - .. figure:: figures/impesFoam/BL_VanGenuchten_noGravity.png
         :width: 500px
         :alt: Buckley-Leverett Van Genuchten no gravity case
 
@@ -132,13 +132,13 @@ Visual representations of the results for both models are shown below:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_BrooksAndCorey.png
+   * - .. figure:: figures/impesFoam/PC_BrooksAndCorey.png
         :width: 500px
-        :alt: Capillary_Brooks.png
+        :alt: Capillary_Brooks
      
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_BrooksAndCorey.png
+     - .. figure:: figures/impesFoam/Sb_BrooksAndCorey.png
         :width: 500px
-        :alt: Capillary_Brooks.png
+        :alt: Capillary_Brooks
 
 - **Van Genuchten model:**
 
@@ -146,10 +146,10 @@ Visual representations of the results for both models are shown below:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/PC_VanGenuchten.png
+   * - .. figure:: figures/impesFoam/PC_VanGenuchten.png
         :width: 500px
-        :alt: Capillary_Brooks.png
+        :alt: Capillary_Brooks
      
-     - .. figure:: file:///work/fabregues/milieux_poreux/porousMultiphaseFoam/doc/figures/doc/impesFoam/Sb_VanGenuchten.png
+     - .. figure:: figures/impesFoam/Sb_VanGenuchten.png
         :width: 500px
-        :alt: Capillary_Brooks.png
+        :alt: Capillary_Brooks
