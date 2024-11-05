@@ -10,7 +10,7 @@ You need first a working OpenFOAM installation on you computer.
 
 Then, load the OpenFOAM environment, i.e. for example ::
 
-  source /opt/OpenFOAM-v2206/etc/bashrc
+  source /opt/OpenFOAM-v2406/etc/bashrc
 
 Then in the "porousMultiphaseFoam" directory, run ::
 
@@ -44,9 +44,9 @@ while the executable solvers are placed in the standard OpenFOAM user directory 
 Compatibility
 -------------
 
-Depending on your installation, you should switch to the github branch corresponding to your OpenFOAM version. If you use OpenFOAM-v2206 for example::
+Depending on your installation, you should switch to the github branch corresponding to your OpenFOAM version. If you use OpenFOAM-v2406 for example::
 
-  git checkout openfoam-v2206
+  git checkout openfoam-v2406
 
 Note that if you want to use the latest version of PMF, it is necessary to have a sufficiently recent installation of openfoam.
 
@@ -72,24 +72,13 @@ Updated branches: PMFv2406.0
 Old branches not updated
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- branch **openfoam-v2006**  > PMFv2107.2
-- branch **openfoam-v1906**  > PMFv2107.1
-- branch **openfoam-v1812**  > PMFv1906
-- branch **openfoam-v1806**  > PMFv1809
-- branch **openfoam-v1712**  > PMFv1805
-
 - branch **openfoam-v10**    > PMFv2310
-- branch **openfoam-v9**     > PMFv2107.2
-- branch **openfoam-v8**     > PMFv2107.2
-- branch **openfoam-v7**     > PMFv2107
-- branch **openfoam-v6**     > PMFv1906
-- branch **openfoam-v5**     > PMFv1809
-
+- branch **openfoam-v9**     > PMFv2310
 - branch **foam-extend-4.0** > PMFv1809
 
 Version not supported
 ^^^^^^^^^^^^^^^^^^^^^
 
-- OpenFOAM 4.0 and older
+- OpenFOAM 8 and older
 - foam-extend 3.2 and older
-- OpenFOAM v1706 and older
+- OpenFOAM v2006 and older
