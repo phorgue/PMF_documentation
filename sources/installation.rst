@@ -3,8 +3,8 @@
 Installation
 ============
 
-How to install
---------------
+Linux instructions
+------------------
 
 You need first a working OpenFOAM installation on you computer.
 
@@ -39,6 +39,37 @@ while the executable solvers are placed in the standard OpenFOAM user directory 
  
 - see the ReleaseNotes.txt file for detailed information about the toolbox.
 
+Windows instructions
+--------------------
+
+1. Download the Windows Native version of OpenFOAM v2406, compiled with MinGW:
+
+   https://sourceforge.net/projects/openfoam/files/v2406/OpenFOAM-v2406-windows-mingw.exe/download
+
+2. Install in a folder (e.g., D:\OpenFOAM\v2406)
+
+3. Go to D:\OpenFOAM\v2406\thirdParty and install the required dependency (MPI) using **msmpisetup.exe**
+
+4. Open the OpenFOAM terminal (MSYS2)
+
+5. Create the user directory in the OpenFOAM installation using the command:
+
+    mkdir -p $FOAM_USER_APPBIN
+
+6. Download the latest Windows-compiled version of PMF:
+
+    https://github.com/phorgue/porousMultiphaseFoam/releases/download/v2503/pmf-opensuse-mingw-v2406.zip
+
+5. Unzip the file and copy all files from the *bin/* and *lib/* folders to:
+
+    D:\OpenFOAM\v2406\msys64\home\ofuser\OpenFOAM\USER-v2406\platforms\win64MingwDPInt32Opt\bin\
+
+*Note: Replace “USER” with your actual username)*
+
+*Note: DLL and EXE files must be placed directly in the folder (do not preserve the PMF file directory structure)*
+
+6) The PMF executables should be accessible from the OpenFOAM terminal. Try to run groundwaterFoam.exe
+  
 .. _compatibility:
 
 Compatibility
