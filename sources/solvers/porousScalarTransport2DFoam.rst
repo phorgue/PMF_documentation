@@ -23,26 +23,26 @@ Example for one specie transport (or multi-species with similar properties):
 
 .. code::
 
-  eps eps [0 0 0 0 0 0 0] 0.25; // porosity (can be volScalarField in constant/)
+  eps [0 0 0 0 0 0 0] 0.25; // porosity (can be volScalarField in constant/)
 
-  Dm Dm [0 2 -1 0 0 0 0] 1e-9; // molecular diffusion
+  Dm [0 2 -1 0 0 0 0] 1e-9; // molecular diffusion
 
   porousTransport // specific dictionary for transport
   {
     phaseName theta; // to specify the flux field (phitheta here) or velocity field (Utheta)
-    Kd Kd [-1 3 0 0 0 0 0] 1e-3;
-    rs rs [1 -3 0 0 0 0 0] 1000;
-    epsTotal epsTotal [0 0 0 0 0 0 0] 0.30;
-    lambda lambda [0 0 -1 0 0 0 0 ] 0;// decay of the C scalar
+    Kd [-1 3 0 0 0 0 0] 1e-3;
+    rs [1 -3 0 0 0 0 0] 1000;
+    epsTotal [0 0 0 0 0 0 0] 0.30;
+    lambda [0 0 -1 0 0 0 0 ] 0;// decay of the C scalar
   }
 
   dispersionModel alphaDispersion; // dispersion model
 
   alphaDispersionCoeffs
   {
-    tau tau [0 0 0 0 0 0 0] 2; // tortuosity
-    alphaL alphaL [0 1 0 0 0 0 0] 0.01; // longitudinal dispersivity
-    alphaT alphaT [0 1 0 0 0 0 0] 0.002; // transverse dispersivity
+    tau [0 0 0 0 0 0 0] 2; // tortuosity
+    alphaL [0 1 0 0 0 0 0] 0.01; // longitudinal dispersivity
+    alphaT [0 1 0 0 0 0 0] 0.002; // transverse dispersivity
   }
 
   sourceEventFileTracer injectionFile.dat;  // to specify event file for time-dependent source term
@@ -87,4 +87,4 @@ The computation of timestep for next iteration is directly computed using trunca
 
   deltaT = Foam::pow(3 x truncationError x Cmax[speciesi]/dC3dT3max[speciesi],1./3.)
 
-where **dC3dT3maxmaximal** is the maximal value of the thid time derivative and **Cmax** the value of C in this cell._
+where **dC3dT3max** is the maximal value of the thid time derivative and **Cmax** the value of C in this cell.

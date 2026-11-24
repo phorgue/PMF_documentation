@@ -8,6 +8,8 @@ Description
 
 Transient (or steady) solver for free-surface flow though porous media (2D modeling)
 
+Solver can be run in *steady* mode using **-steady** option.
+
 Time step is managed using an estimation of the time truncation error (see below).
 
 Solver requires several geographical information (see below).
@@ -30,13 +32,13 @@ Configuration files
 .. code::
 
     // fluid and medium properties
-    eps eps [0 0 0 0 0 0 0] 0.27; // porosity (can be volScalarField in constant/)
-    rho rho [1 -3 0 0 0 0 0] 1000; // density
-    mu mu [1 -1 -1 0 0 0 0] 1e-03; // viscosity
+    eps [0 0 0 0 0 0 0] 0.27; // porosity (can be volScalarField in constant/)
+    rho [1 -3 0 0 0 0 0] 1000; // density
+    mu [1 -1 -1 0 0 0 0] 1e-03; // viscosity
 
     hWaterMin [0 1 0 0 0 0 0] 0.01; // minimal water height for 'dry' cells
 
-    infiltration infiltration [0 1 -1 0 0 0 0] -5e-9; // constant uniform infiltration velocity (optional)
+    infiltration [0 1 -1 0 0 0 0] -5e-9; // constant uniform infiltration velocity (optional)
 
     infiltrationEventFile "infiltrationOverTime.dat"; // to specify time-varying infiltration (uniform or non-uniform)
 
@@ -96,11 +98,11 @@ Required fields
 Optional fields
 ---------------
 
-- **0/eps :** porosity field (replace eps in transport properties)
+- **0/eps :** porosity field (replace eps in **constant/transportProperties**)
 
-- **0/infiltration :** infiltration velocity field (replace infiltration in transport properties)
+- **0/infiltration :** infiltration velocity field (replace infiltration value in **constant/transportProperties**)
 
-- **constant/potentialDEM :** field used by forcing potential modes: *fixedPotential* and *seepage*
+- **constant/potentialDEM :** field used if *seepage* is active
 
 Output computed fields
 ----------------------
@@ -121,7 +123,7 @@ where **dH3dT3max** is the maximal value of the thid time derivative and **Hmax*
 Steady simulation
 -----------------
 
-Solver can be run in *steady* mode using **-steady** option. The residual control and the under-relaxation factor should be specificied in **system/fvSolution** as :
+The residual control and the under-relaxation factor should be specificied in **system/fvSolution** as :
 
 .. code::
 

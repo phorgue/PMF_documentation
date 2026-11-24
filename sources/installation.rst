@@ -86,15 +86,14 @@ Note that if you want to use the latest version of PMF, it is necessary to have 
 Development branches
 ^^^^^^^^^^^^^^^^^^^^
 
-- branch **dev** works with OpenFOAM-v2406 `openfoam.com <https://www.openfoam.com/>`_
+- branch **dev** works with OpenFOAM-v2406/2506/2606 `openfoam.com <https://www.openfoam.com/>`_
 
-Updated branches: PMFv2406.0
+Updated branches: PMFv2611.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+- branch **openfoam-v2606**
+- branch **openfoam-v2506**
 - branch **openfoam-v2406**
-- branch **openfoam-v2306**
-- branch **openfoam-v2206**
-- branch **openfoam-v2106**
 
 *openfoam-v10 has errors when using postProcess/setSet in tutorials*
 
@@ -103,6 +102,7 @@ Updated branches: PMFv2406.0
 Old branches not updated
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+- branch **openfoam-v2306**  > PMFv2503
 - branch **openfoam-v10**    > PMFv2310
 - branch **openfoam-v9**     > PMFv2310
 - branch **foam-extend-4.0** > PMFv1809

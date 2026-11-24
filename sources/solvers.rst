@@ -6,14 +6,14 @@ Solvers
 .. toctree::
    :maxdepth: 1
 
-   anisoImpesFoam
-   groundwater2DFoam
-   groundwaterFoam
-   groundwaterTransport2DFoam
-   groundwaterTransportFoam
-   impesFoam
-   porousScalarTransport2DFoam
-   porousScalarTransportFoam
+   solvers/anisoImpesFoam
+   solvers/groundwater2DFoam
+   solvers/groundwaterFoam
+   solvers/groundwaterTransport2DFoam
+   solvers/groundwaterTransportFoam
+   solvers/impesFoam
+   solvers/porousScalarTransport2DFoam
+   solvers/porousScalarTransportFoam
    
 .. _2D-solver-introduction-solvers:
 

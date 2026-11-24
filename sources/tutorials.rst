@@ -25,9 +25,7 @@ This approximation significantly reduces the computational cost, making the 2D s
 
 The following solvers are available in the 2D groundwater modeling suite:
 
-- **steadyGroundwater2DFoam** for steady-state simulations
-
-- **groundwater2DFoam** for transient groundwater flow
+- **groundwater2DFoam** for steady-state or transient groundwater flow simulations
 
 - **porousScalarTransport2DFoam** for passive tracer transport
 

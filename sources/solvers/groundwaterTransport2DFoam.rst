@@ -26,11 +26,11 @@ Configuration files
 .. code::
 
     // fluid and medium properties
-    eps eps [0 0 0 0 0 0 0] 0.27; // porosity (can be volScalarField in constant/)
-    rho rho [1 -3 0 0 0 0 0] 1000; // density
-    mu mu [1 -1 -1 0 0 0 0] 1e-03; // viscosity
+    eps [0 0 0 0 0 0 0] 0.27; // porosity (can be volScalarField in constant/)
+    rho [1 -3 0 0 0 0 0] 1000; // density
+    mu [1 -1 -1 0 0 0 0] 1e-03; // viscosity
 
-    infiltration infiltration [0 1 -1 0 0 0 0] -5e-9; // constant uniform infiltration velocity
+    infiltration [0 1 -1 0 0 0 0] -5e-9; // constant uniform infiltration velocity
 
     infiltrationEventFile "infiltrationOverTime.dat"; // to specify time-varying infiltration (uniform or non-uniform)
 
@@ -46,23 +46,23 @@ Configuration files
 
     useDEMtoFixPotential yes; // (use potentialDEM values to impose potential (instead of user-defined potential values)
 
-    Dm Dm [0 2 -1 0 0 0 0] 1e-9; // molecular diffusion
+    Dm [0 2 -1 0 0 0 0] 1e-9; // molecular diffusion
 
     porousTransport // specific dictionary for transport
     {
-        Kd Kd [-1 3 0 0 0 0 0] 1e-3;
-        rs rs [1 -3 0 0 0 0 0] 1000;
-        epsTotal epsTotal [0 0 0 0 0 0 0] 0.30;
-        lambda lambda [0 0 -1 0 0 0 0 ] 0;// decay of the C scalar
+        Kd [-1 3 0 0 0 0 0] 1e-3;
+        rs [1 -3 0 0 0 0 0] 1000;
+        epsTotal [0 0 0 0 0 0 0] 0.30;
+        lambda [0 0 -1 0 0 0 0 ] 0;// decay of the C scalar
     }
 
     dispersionModel alphaDispersion; // dispersion model
 
     alphaDispersionCoeffs
     {
-        tau tau [0 0 0 0 0 0 0] 2; // tortuosity
-        alphaL alphaL [0 1 0 0 0 0 0] 0.01; // longitudinal dispersivity
-        alphaT alphaT [0 1 0 0 0 0 0] 0.002; // transverse dispersivity
+        tau [0 0 0 0 0 0 0] 2; // tortuosity
+        alphaL [0 1 0 0 0 0 0] 0.01; // longitudinal dispersivity
+        alphaT [0 1 0 0 0 0 0] 0.002; // transverse dispersivity
     }
 
     sourceEventFileTracer injection.dat; // to specify event file for time-dependent source term
@@ -76,7 +76,7 @@ Configuration files
     //- for Scalar transport time step control
     truncationError 0.001; // global truncation error used to manage time-step
     truncationError_potential 0.001; // (optional) potential only truncation error used to manage time-step
-    truncationkError_C 0.001; // (optional) tracer only truncation error used to manage time-step
+    truncationError_C 0.001; // (optional) tracer only truncation error used to manage time-step
 
     CSVoutput       true; // active the CmassBalance.csv output
 
