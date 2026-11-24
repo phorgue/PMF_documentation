@@ -6,7 +6,7 @@ Libraries
 .. toctree::
    :maxdepth: 2
 
-   numericalMethods
-   porousBoundaryConditions
-   porousModels
-   toolsGIS
+   libraries/numericalMethods
+   libraries/porousBoundaryConditions
+   libraries/porousModels
+   libraries/toolsGIS
