@@ -39,11 +39,11 @@ Here a quick view of the watershed for every 2D validation cases:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: figures/2D_watershed_modeling/mesh.png
+   * - .. figure:: tutorials/figures/2D_watershed_modeling/mesh.png
         :width: 500px
         :alt: mesh
 
-     - .. figure:: figures/2D_watershed_modeling/permeability_field.png
+     - .. figure:: tutorials/figures/2D_watershed_modeling/permeability_field.png
         :width: 500px
         :alt: permeability_field
         
@@ -51,11 +51,11 @@ Here a quick view of the watershed for every 2D validation cases:
    :widths: 50 50
    :header-rows: 0
 
-   * - .. figure:: figures/2D_watershed_modeling/DEM_for_lower_limit.png
+   * - .. figure:: tutorials/figures/2D_watershed_modeling/DEM_for_lower_limit.png
         :width: 500px
         :alt: DEM_for_lower_limit
 
-     - .. figure:: figures/2D_watershed_modeling/DEM_for_upper_limit.png
+     - .. figure:: tutorials/figures/2D_watershed_modeling/DEM_for_upper_limit.png
         :width: 500px
         :alt: DEM_for_upper_limit
         
